@@ -30,6 +30,10 @@
 
     <actions>
         <!-- Add your actions here -->
+        <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action class="actions.HelloWorldAction" id="action.hello-world" text="_hello world"/>
+        </group>
     </actions>
 
 </idea-plugin>
