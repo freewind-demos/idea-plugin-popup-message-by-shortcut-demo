@@ -1,19 +1,29 @@
-IDEA Hello World Plugin Demo
+IDEA Plugin: Popup message by shortcut
 ===========================
 
-A very simple IDEA plugin demo: add a "Sample Menu", and when click on the "hello world" item, it will alert a message box.
+Press a shortcut, there will be a message popped up.
 
 How to run
 ----------
 
-Use IDEA to open this project, and run with "Plugin" configuration.
+1. Use IDEA to open this project, and run with "Plugin" configuration.
+2. Press a shortcut `ctrl shift e`, a message "Hello world!" will be popped up
+3. Or you can press two-phase shortcut: `ctrl shift u` and `i`
 
-![run-plugin](/readme-images/run-plugin.png)
+Where is the shortcut defined
+-----------------------------
 
-There is a new "Sample Menu", click on the "hello world" item:
+`resources/META-INF/plugin.xml`:
 
-![sample-menu](/readme-images/sample-menu.png)
+```
+<action class="actions.HelloWorldAction" id="action.hello-world" text="_hello world">
+    <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift e"/>
+    <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift u" second-keystroke="i" />
+</action>
+```
 
-You will see an alert with "Hello world!" message:
+Questions
+---------
 
-![alert](/readme-images/alert.png)
+1. What can be used as the value of `first-keystroke`? Where is the document or the code?
+2. What does `ctrl` and `meta` mean (in IDEAs on different OS)?

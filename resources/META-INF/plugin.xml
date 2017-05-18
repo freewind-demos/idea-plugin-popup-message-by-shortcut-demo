@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>com.your.company.unique.plugin.id</id>
-    <name>Hello World!</name>
+    <id>in.freewind.idea-plugin-popup-by-shortcut-demo</id>
+    <name>idea-plugin-popup-by-shortcut-demo</name>
     <version>1.0</version>
     <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
 
@@ -32,7 +32,11 @@
         <!-- Add your actions here -->
         <group id="MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
             <add-to-group group-id="MainMenu" anchor="last"/>
-            <action class="actions.HelloWorldAction" id="action.hello-world" text="_hello world"/>
+            <action class="actions.HelloWorldAction" id="action.hello-world" text="_hello world">
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift e"/>
+                <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift u" second-keystroke="i" />
+                <!--<keyboard-shortcut keymap="$default" first-keystroke="shift ctrl meta alt m"/>-->
+            </action>
         </group>
     </actions>
 
