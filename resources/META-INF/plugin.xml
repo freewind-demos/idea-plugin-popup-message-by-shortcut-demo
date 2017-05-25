@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>in.freewind.idea-plugin-popup-by-shortcut-demo</id>
+    <id>idea-plugin-popup-message-by-shortcut-demo</id>
     <name>idea-plugin-popup-by-shortcut-demo</name>
     <version>1.0</version>
     <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
