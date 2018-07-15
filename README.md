@@ -1,14 +1,24 @@
 IDEA Plugin: Popup message by shortcut
 ===========================
 
-Press a shortcut, there will be a message popped up.
+Press the predefined shortcut, pop up a message.
 
 How to run
 ----------
 
-1. Use IDEA to open this project, and run with "Plugin" configuration.
-2. Press a shortcut `ctrl shift e`, a message "Hello world!" will be popped up
-3. Or you can press two-phase shortcut: `ctrl shift u` and `i`
+```
+./gradlew runIde
+```
+
+Create or open a project in new created IDEA for trying the keyshorts.
+
+If you are using keymap:
+
+1. `Mac OS X`: press `ctrl shift e` ( or `ctrl shift i` -> `k`)
+1. `Mac OS X 10.5+`: press `ctrl shift w`
+1. others: press `ctrl shift y` (it may not work if there is conflict)
+
+You can see we can define different keys for different keymaps.
 
 Where is the shortcut defined
 -----------------------------
@@ -17,10 +27,16 @@ Where is the shortcut defined
 
 ```
 <action class="actions.HelloWorldAction" id="action.hello-world" text="_hello world">
-    <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift e"/>
-    <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift u" second-keystroke="i" />
+    <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl shift e"/>
+    <keyboard-shortcut keymap="Mac OS X" first-keystroke="ctrl shift i" second-keystroke="k"/>
+    <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="ctrl shift w"/>
+    <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift y"/>
 </action>
 ```
+
+Notice if there is any conflict with existing ones, the keyshorts may not work.
+
+`$default` is the fallback option.
 
 Questions
 ---------
